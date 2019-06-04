@@ -39,6 +39,8 @@ class Node
 			Node *n = head;
 
 			if (n->data == d){
+				n->data = n->next->data;
+				n->next = n->next->next;
 				return head;
 			}
 
@@ -88,13 +90,30 @@ class Node
 				
 		*/
 
-		bool partition(){
+		bool partition(int a){
 			Node *n = this;
+			Node left(-1);
+			Node right(-1);
 			while(n != NULL){
+				if (n->data < a){
+					left.appendToTail(n->data);
+				}else{
+					right.appendToTail(n->data);
+				}
 				cout<<n->data<<endl;
 				n = n->next;
 			}
-			// cout<<n->data<<endl;
+			left.deleteNode(left.head, -1);
+			right.deleteNode(right.head, -1);
+
+
+
+			cout<<"elements in left are : "<<endl;
+			left.display();
+
+			cout<<"elements in right are : "<<endl;
+			right.display();
+
 			return false;
 		}
 		
@@ -114,7 +133,7 @@ int main(int argc, char const *argv[])
 
 	n.display();
 	cout<<endl;
-	n.partition();
+	n.partition(4);
 	
 	return 0;
 }
