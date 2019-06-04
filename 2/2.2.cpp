@@ -17,11 +17,10 @@ class Node
 
 		void display(){
 			Node *n = this;
-			cout<<n->data<<endl;
-			do{
-				cout<<n->next->data<<endl;
+			while(n != NULL){
+				cout<<n->data<<endl;
 				n = n->next;
-			}while(n->next != NULL);
+			}
 		}
 
 		void appendToTail(int d){

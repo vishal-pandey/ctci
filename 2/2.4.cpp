@@ -72,64 +72,51 @@ class Node
 		
 
 		/* 
-			Q) 2.1
-				Approach is to create new link list with only 
-				unique elements and ignore already present in newly created link list
+			Q) 2.4
+				Write code to partition a linked list around a value x, 
+				such that all nodes less than x come before all nodes greater
+				than or equal to x. If x is contained within the list, the value
+				of x only need to be after the element less than x. The partition
+				element x can appear anywhere in the "Right partition"; it does not
+				need to apear between the leftand right portitions.
+
+				EXAMPLE
+				Input :  3 -> 5 -> 8 -> 5 -> 10 -> 2 -> 1 [partition = 5]
+				Output : 3 -> 1 -> 2 -> 10 -> 5 -> 5 -> 8
+
+			A) Approach
+				
 		*/
 
-		Node deleteDuplicate(){
+		bool partition(){
 			Node *n = this;
-			Node nn(n->data);
-
-			while(n->next != NULL){
-				if (!searchNode(nn.head, n->next->data)){
-					nn.appendToTail(n->next->data);
-				}
+			while(n != NULL){
+				cout<<n->data<<endl;
 				n = n->next;
 			}
-
-			return nn;
-
+			// cout<<n->data<<endl;
+			return false;
 		}
+		
 };
+
 
 
 int main(int argc, char const *argv[])
 {
-	Node n(0);
-
-	n.appendToTail(1);
+	Node n(3);
+	n.appendToTail(5);
+	n.appendToTail(8);
+	n.appendToTail(5);
+	n.appendToTail(10);
 	n.appendToTail(2);
-	n.appendToTail(3);
-
-	for (int i = 0; i < 10; ++i)
-	{
-		n.appendToTail(i);
-	}
-
-	n.deleteNode(n.head, 5);
+	n.appendToTail(1);
 
 	n.display();
-	
 	cout<<endl;
-	cout<<endl;
-	cout<<endl;
-
-	Node uniqueList = n.deleteDuplicate();
-
-	uniqueList.display();
+	n.partition();
 	
 	return 0;
 }
 
-
-
-/* 
-	Idea for follow up
-	``````````````````
-	Take a variable pointer from tail and start checking 
-	if it is present in linked list from start till the pointer 
-	if found delete that and move pointer towards head and terminate at head.
-
-*/
 
