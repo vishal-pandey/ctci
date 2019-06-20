@@ -90,15 +90,3 @@ int main(int argc, char const *argv[]){
 	insertMN(10000000000, 10011, 2, 6);
 	return 0;
 }
-
-
-
-
-
-
-
-
-
-
-
-

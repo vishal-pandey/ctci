@@ -50,7 +50,7 @@ long int updateBit(long int num, long int i, long int bitIs1){
 
 /*
 
-	Question 5.1: 
+	Question 5.3: 
 	`````````````
 	Flip Bit to Win: You have an integer and you can flip exactly one bit from 0 to a 1. write code to
 	find the length if the longest sequence of 1s you could create.
@@ -122,9 +122,6 @@ int main(int argc, char const *argv[]){
 
 	int num = 1779;
 	cout<<oneSequence(num)<<endl;
-	// cout<<intToBinary(5)<<endl;
-	// cout<<setBit(101,1)<<endl;
-	// cout<<countMOnes(11011101111)<<endl;
 	return 0;
 }
 
